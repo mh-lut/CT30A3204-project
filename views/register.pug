@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    h1 Register
+    div(id="error")
+    form(action="" method="POST" id="login-form")
+        label(for="email") Email
+        input(type="email" name="email" id="email" required)
+        label(for="email") Username
+        input(type="text" name="username" id="username" required)
+        label(for="password") Password
+        input(type="password" name="password" id="password" required)
+        input(class="button" type="submit" value="Submit" id="submit")
+    script(src="/javascripts/register.js") 

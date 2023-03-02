@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    h1 Create question
+    div(id="error")
+    form#message-form(action="" method="POST")
+        label(for="headline") Headline
+        input(type="text" name="headline" id="headline" required)
+        label(for="content") Content
+        textarea#content(name="content", cols="30", rows="10" required) 
+        input(class="btn waves-effect #33691e light-green darken-4" type="submit" value="Send question", id="submitButton")
+    script(src="/javascripts/message.js") 

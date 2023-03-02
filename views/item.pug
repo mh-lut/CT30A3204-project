@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    h1 Question
+    div: a(href="/" id="backLink") Back
+    div(class="card-panel #dcedc8 light-green lighten-4")
+        p(class="flow-text") #{MessageUser} :
+        pre #{Message}
+
+    ul 
+        each comment, index1 in Comments 
+            each commentuser, index2 in CommentUser 
+                if index1 == index2 
+                    div(class="card-panel #c5e1a5 light-green lighten-3")
+                        p(class= "flow-text")= commentuser + ' :'
+                        pre= comment
+
+                    
+    div(id="error")
+    form(action="" method="POST" id="commenting-form")
+        label(for="text") Create comment
+        textarea#text(name="text", cols="30", rows="10" required) 
+        input(class="btn waves-effect #33691e light-green darken-4" type="submit" value="Send comment" id="submit")
+    script(src="/javascripts/item.js")
